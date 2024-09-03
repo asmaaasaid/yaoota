@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaoota</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top " id="nav">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light fs-1 " href="#" id="logo">ya<span>oo</span>ta</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-light fw-medium text-capitalize ">
+              <li class="nav-item">
+                <a class="nav-link recipe text-light fw-medium" id="item" >pizza</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link recipe text-light fw-medium" >chicken</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link recipe text-light fw-medium" >lobster</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link recipe text-light fw-medium" >tacos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link recipe text-light fw-medium" >sushi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link recipe text-light fw-medium" >toast</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link recipe text-light fw-medium" >pasta</a>
+              </li>
+             
+            </ul>
+           
+          </div>
+        </div>
+      </nav>
+        <div class="layer container-fluid  d-flex">
+         <div class="row w-100 justify-content-center align-items-center">
+          <div class="col-md-6">
+            <div class=" d-flex align-items-center justify-content-around">
+                <input type="search" class="form-control text-light py-2 bg-transparent border-2 w-75" id="input-search" placeholder="Find Your Recipe">
+                <button class="btn btn-outline-light border-2 py-2 text-capitalize fw-semibold" id="btn-search">search</button>
+            </div>
+          </div>
+         </div>  
+        </div>
+    </header>
+   <section class="container-fluid p-5 all-recipes">
+   <div class="d-flex justify-content-between">
+    <h5 class="text-capitalize" id="recipe-name"></h5>
+    <div>
+      <button id="prvis-btn" class="btn bg-light rounded-0 rounded-start"><i class="fa-solid fa-angles-left"></i></button>
+      <button id="nxt-btn" class="btn btn-light rounded-0 rounded-end"><i class="fa-solid fa-angles-right"></i></button>
+    </div>
+   </div>
+    <div class="row gy-3 mt-4" id="demo">
+    </div>
+   </section>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/main.js"></script>
+</body>
+</html>

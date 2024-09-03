@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+.nav-link{cursor: pointer;}
+header
+{
+    height: 100vh;
+    background-image: url('../images/tomatoes-8324940_640.webp');
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.layer
+{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-family: "Inconsolata", monospace;
+}
+.recipe-img
+{
+    height: 250px !important;
+}
+.card
+{
+    height: 520px;
+    background-color: transparent;
+    box-shadow: 2px 2px 20px rgba(131, 130, 130, 0.4);
+    overflow: hidden;
+   
+}
+.card img
+{
+    transition: all 0.7s ease-in;
+}
+.card:hover img
+{
+    transform: scale(1.1);
+}
+.all-recipes
+{
+    background-color: #021526;
+}
+.card-body
+{
+    font-family: "Inconsolata", monospace;
+}
+.card-body li , .card-body h6
+{
+    color: rgb(197, 193, 193) !important;
+}
+.card-body button:hover
+{
+    background-color:rgba(79, 70, 83, 0.8);
+    border-bottom: 1px solid #2e073f;
+}
+.card-body button
+{
+    transition: all 0.7s linear;
+}
+.card-body button a 
+{
+    
+    color: gray ;
+    text-shadow: 2px 2px 5px #534040;
+    transition: all 0.7s linear;
+}
+.card-body button a:hover
+{
+    color: #fff;
+}
+.navbar-brand span 
+{
+    color: red;
+    font-weight: 900;
+    font-family: "Nerko One", cursive;  
+  
+}
+.all-recipes h5 
+{
+    color: rgb(221, 214, 214);
+}
+.layer input::placeholder
+{
+    color: #fdfdfd;
+    font-weight: 600;
+}
+.page-item
+{
+    cursor: pointer;
+}
+.disabled-btn {
+    background-color: #ccc; 
+    color: #666; 
+    cursor: not-allowed; 
+    pointer-events: none; 
+}
+.navbar-toggler
+{
+    border-color: whitesmoke;
+    border-width: 2px;
+    color: whitesmoke;
+}
+@media screen and (max-width:768px){
+    .navbar
+    {
+        background-color: wheat;
+    }
+    .navbar-nav
+    {
+       
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: row;
+    }
+   
+}
