@@ -22,24 +22,37 @@ header
 }
 .card
 {
-    height: 520px;
-    background-color: transparent;
-    box-shadow: 2px 2px 20px rgba(131, 130, 130, 0.4);
-    overflow: hidden;
+    transition: all 4s !important;
    
 }
-.card img
+.showrecipe
+{
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    display: none !important;
+    transition: all 4s !important;
+}
+.card:hover .showrecipe
+{
+    display: flex !important;
+} 
+
+.showrecipe span, .showrecipe{cursor: pointer;}
+/* .card img
 {
     transition: all 0.7s ease-in;
-}
-.card:hover img
-{
-    transform: scale(1.1);
-}
-.all-recipes
-{
+} */
+.card h6 , .btn-details{
     background-color: #021526;
 }
+/* .card:hover img
+{
+    transform: scale(1.1);
+} */
+/* .all-recipes
+{
+    background-color: #021526;
+} */
 .card-body
 {
     font-family: "Inconsolata", monospace;
@@ -99,6 +112,10 @@ header
     border-color: whitesmoke;
     border-width: 2px;
     color: whitesmoke;
+}
+#image_detail
+{
+    height: 250px;
 }
 @media screen and (max-width:768px){
     .navbar

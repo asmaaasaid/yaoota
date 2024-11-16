@@ -11,7 +11,7 @@
 <body>
    
     <header>
-      <nav class="navbar navbar-expand-lg fixed-top " id="nav">
+      <nav class="navbar navbar-expand-lg fixed-top px-5 " id="nav">
         <div class="container-fluid">
           <a class="navbar-brand text-light fs-1 " href="#" id="logo">ya<span>oo</span>ta</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,17 +57,50 @@
          </div>  
         </div>
     </header>
-   <section class="container-fluid p-5 all-recipes">
+   <section class="container-fluid p-5 all-recipes bg-light">
    <div class="d-flex justify-content-between">
-    <h5 class="text-capitalize" id="recipe-name"></h5>
+    <h5 class="text-capitalize text-dark" id="recipe-name"></h5>
     <div>
       <button id="prvis-btn" class="btn bg-light rounded-0 rounded-start"><i class="fa-solid fa-angles-left"></i></button>
       <button id="nxt-btn" class="btn btn-light rounded-0 rounded-end"><i class="fa-solid fa-angles-right"></i></button>
     </div>
    </div>
     <div class="row gy-3 mt-4" id="demo">
+      <div class="showrecipe bg-info d-flex justify-content-center align-items-center text-dark position-absolute w-100 top-0 end-0 start-0 bottom-0">
+        <h6>show recipe</h6>
+      </div>
     </div>
    </section>
+
+   <!-- modal of recipe details -->
+   
+    <div class="modal x fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-capitalize" id="exampleModalLabel">recipe details</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="" alt="image detail" id="image_detail" class="w-100">
+            <h6 class="text-capitalize mt-3">title: <span id="title"></span></h6>
+            <h6 class="text-capitalize">publisher: <span id="publishDetail"></span></h6>
+            <h6 class="text-capitalize">social rank: <span class="badge text-bg-secondary"></span></h6>
+            <h6 class="text-capitalize">ingrediants:</h6>
+            <ul class="listItem">
+              
+            </ul>
+            <button type="button" class="btn btn-dark"><a href="" class="text-light text-capitalize text-decoration-none publishSrc">publisher source</a></button>
+            <button type="button" class="btn btn-dark"><a href="" class="text-light text-capitalize text-decoration-none moreUrl fw-normal">for more details</a></button>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <script src="js/bootstrap.bundle.min.js"></script>
    <script src="js/main.js"></script>

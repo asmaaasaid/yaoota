@@ -66,22 +66,15 @@ function displayRecipes(){
     var rowRecipes=``;
     for(var i=0 ; i<currentRecipes.length ; i++){
         rowRecipes+=`
-         <div class="col-md-3 ">
-            <div class="card  border-0" >
-                 <img src="${currentRecipes[i].image_url}" class="card-img-top recipe-img" alt="...">
-                <div class="card-body text-capitalize">
-                  <h5 class="card-title">${currentRecipes[i].title}</h5>
-                  <ul>
-                    <li class="fs-6 card-title">publisher's book :${currentRecipes[i].publisher}</li>
-                    <li class="fs-6 card-title">social rank :${Math.floor(currentRecipes[i].social_rank)}</li>
-                  </ul>
-                 
-                  
-                  <button class="btn my-2   rounded-0"> <a href="${currentRecipes[i].publisher_url}" class="text-decoration-none text-capitalize fw-semibold">publisher source </a></button>
-                  <button class="btn   rounded-0"> <a href="${currentRecipes[i].source_url}" class="text-decoration-none text-capitalize fw-semibold">more details...</a></button>
-                </div>
-              </div>
-        </div>`
+       <div class="col-md-3 position-relative">
+        <div class="card  p-4 rounded-3 bg-transparent border-0 shadow" >
+            <img src="${currentRecipes[i].image_url}" class="w-100 recipe-img rounded" alt="recipe picture">
+            <h6 class="text-light mt-3 rounded ps-2 py-2 text-capitalize">${currentRecipes[i].title.split(" ").slice(0,3).join(" ")} <a class="fw-normal text-lowercase " href="${currentRecipes[i].source_url}">see more</a></h6>
+            <div data-bs-toggle="modal" data-bs-target="#exampleModal"  onclick="recipeDetails(${currentRecipes[i].recipe_id})" class="showrecipe rounded-3  justify-content-center align-items-center text-light position-absolute w-100 top-0 end-0 start-0 bottom-0">
+               <span class="text-uppercase fw-medium">show recipe</span>
+            </div>
+          </div>
+    </div>`
 
     }
     document.getElementById('demo').innerHTML=rowRecipes;
@@ -131,3 +124,35 @@ window.addEventListener('scroll' , ()=>{
         navSection.style.backgroundColor='transparent';
     }
 })
+
+let allRecipeDetails=''
+async function recipeDetails(id){
+    let details =await fetch(`https://forkify-api.herokuapp.com/api/get?rId=${id}`);
+    let data= await details.json();
+    allRecipeDetails=await data.recipe;
+    console.log(allRecipeDetails)
+    showRecipeDetails()
+}
+
+function showRecipeDetails(){
+    let title=document.querySelector('#title');
+    let image_detail = document.querySelector('#image_detail');
+    let publishDetail = document.querySelector('#publishDetail');
+    let badge = document.querySelector('.badge');
+    let publishSrc = document.querySelector('.publishSrc');
+    let moreUrl=document.querySelector('.moreUrl');
+    let listItem=document.querySelector('.listItem')
+    let item='';
+
+    image_detail.setAttribute('src',`${allRecipeDetails.image_url}`);
+    publishDetail.innerHTML=allRecipeDetails.publisher;
+    title.innerHTML=allRecipeDetails.title;
+    badge.innerHTML=Math.round(allRecipeDetails.social_rank);
+    publishSrc.setAttribute('href',`${allRecipeDetails.publisher_url}`);
+    moreUrl.setAttribute('src',`${allRecipeDetails.source_url}`);
+
+    for(let i=0 ; i<allRecipeDetails.ingredients.length ; i++){
+      item+=`<li>${allRecipeDetails.ingredients[i]}</li>`
+    }
+    listItem.innerHTML=item
+}
